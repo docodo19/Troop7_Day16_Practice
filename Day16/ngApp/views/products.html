@@ -1,0 +1,30 @@
+﻿<h1>This is the Products page!</h1>
+
+<ul style="color:red">
+    <li ng-repeat="error in controller.validationErrors">
+        {{error}}
+    </li>
+</ul>
+
+<form ng-submit="controller.save()">
+    <div>
+        <label>Name:</label>
+        <input ng-model="controller.product.name" />
+    </div>
+    <div>
+        <label>Price:</label>
+        <input ng-model="controller.product.price" />
+    </div>
+    <input type="submit" value="Save" />
+</form>
+
+
+<ul>
+    <li ng-repeat="product in controller.products">
+        {{product.name}}
+        <button ng-click="controller.getProduct(product.id)">Details</button>
+    </li>
+</ul>
+
+<!--<br />
+<h3>{{controller.product.name}}: {{controller.product.price}}</h3>-->
